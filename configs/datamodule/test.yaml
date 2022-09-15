@@ -1,0 +1,4 @@
+_target_: src.datamodules.test_class.TestClass
+_partial_: true ## similar to functools partials -- first apply the parameters give back the function expecting rest of the paraeters
+foo: "this is a test"
+bar: "this is bar test"

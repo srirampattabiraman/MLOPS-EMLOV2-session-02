@@ -37,7 +37,7 @@ from typing import List, Optional, Tuple
 
 import hydra
 import pytorch_lightning as pl
-from omegaconf import DictConfig
+from omegaconf import DictConfig  ## comes up along with hydra
 from pytorch_lightning import Callback, LightningDataModule, LightningModule, Trainer
 from pytorch_lightning.loggers import LightningLoggerBase
 
@@ -46,7 +46,7 @@ from src import utils
 log = utils.get_pylogger(__name__)
 
 
-@utils.task_wrapper
+@utils.task_wrapper ## If training stops in mid it will do evaluation metrics, will fetch logs as well
 def train(cfg: DictConfig) -> Tuple[dict, dict]:
     """Trains the model. Can additionally evaluate on a testset, using best weights obtained during
     training.
